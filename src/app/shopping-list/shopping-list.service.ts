@@ -19,6 +19,7 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
+  //This service method emits the event to the receiving component - shopping-list
   addIngredientAdded(ingredient: Ingredient) {
     this.ingredients.push(ingredient)
     this.ingredientChanged.emit(this.ingredients.slice());

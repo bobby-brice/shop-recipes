@@ -19,6 +19,7 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //this method passes data to the service method through addIngredientAdded
   onAddItem() {
     const ingName = this.nameInputRef.nativeElement.value;
     const ingAmount = this.amountInputRef.nativeElement.value;
