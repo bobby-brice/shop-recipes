@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../../recipe.model';
-import { RecipeService } from '../../recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -9,16 +8,17 @@ import { RecipeService } from '../../recipe.service';
 })
 export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
+  @Input() index: number;
 
-
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSelected() {
-    //we emit this event on click to pass this data and the recipe component subscribes to this event firing and sets the recipe selected
-    this.recipeService.recipeSelected.emit(this.recipe);
-  }
+  //we remove the onSelected() click event as we're now using the router and getting the selected ID through the service
+  // onSelected() {
+  //   //we emit this event on click to pass this data and the recipe component subscribes to this event firing and sets the recipe selected
+  //   this.recipeService.recipeSelected.emit(this.recipe);
+  // }
 
 }
