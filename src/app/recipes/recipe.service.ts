@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.model';
@@ -7,7 +8,7 @@ import { Recipe } from './recipe.model';
   providedIn: 'root'
 })
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
+  // recipeSelected = new Subject<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe('Grilled Chicken', 'Grilled chicken with a fresh garden salad', 'https://i1.wp.com/smittenkitchen.com/wp-content/uploads//2019/10/chicken-tikka-masala.jpg?fit=750%2C500&ssl=1', [new Ingredient('Chicken Breast', 1), new Ingredient('Rice', 1)]),
